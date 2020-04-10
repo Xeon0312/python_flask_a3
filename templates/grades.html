@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="records">
+    <h2>Instructor name: {{data.username}}</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Student name
+                </td>
+                <td>
+                    Assignment1
+                </td>
+                <td>
+                    Assignment2
+                </td>
+                <td>
+                    Assignment3
+                </td>
+                <td>
+                    Midterm Exam
+                </td>
+                <td>
+                    Final exam
+                </td>
+                <td>
+                    Lab
+                </td>
+                <td>
+                    Edit
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for students in data.students %}
+            <tr>
+                <td>{{students.username}}</td>
+                <td>{{students.assignment1}}</td>
+                <td>{{students.assignment2}}</td>
+                <td>{{students.assignment3}}</td>
+                <td>{{students.midtermexam}}</td>
+                <td>{{students.finalexam}}</td>
+                <td>{{students.lab}}</td>
+                <td><a href={{"/editmarks/" + students.username}}>edit</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

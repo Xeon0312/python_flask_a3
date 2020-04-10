@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block main %}
+{% if data.username is defined %}
+{% if data.role == 0%}
+<p class="welcome">Welcome {{data.username}}, <a href="/mymarks">click here</a> to see your current grades</p>
+<p class="welcome">Leave <a href="feedback">Anonymous feedbacks</a>
+</p>
+{% elif data.role == 1 %}
+<p class="welcome">Welcome instructor {{data.username}}, <a href="/grades">click here</a> all the grades of your class.
+</p>
+<p class="welcome"><a href="/feedbacks">feedbacks</a>
+</p>
+<p class="welcome"><a href="/remarking">Remarking requests</a>
+</p>
+{% endif%}
+{% endif%}
+<section id="mainCampaign">
+    <div class="headerWrap">
+        <div class="mainPanel">
+            <a href="/">
+                <img src={{ url_for('static', filename='Introduction to Databases and Web Applications.png') }}
+                    alt="CSCB20" class="pc"></a>
+        </div>
+    </div>
+</section>
+{% if data.username is defined %}
+    <section>
+    <div class="mainsection">
+        <h2> Course Description</h2>
+
+        <p>A practical introduction to databases and Web app development. Databases: terminology and applications;
+            creating, querying and updating databases; the entity-relationship model for database design. Web
+            documents
+            and applications: static
+            and interactive
+            documents; Web servers and dynamic server-generated content; Web application development and interface
+            with
+            databases.</p>
+    </div>
+    <div class="mainsection">
+        <h2>Prerequisite</h2>
+        <p>Some experience with programming in an imperative language such as Python, Java or C.</p>
+    </div>
+    <div class="mainsection">
+        <h2>Exclusion</h2>
+        <p>This course may not be taken after - or concurrently with - any C- or D-level CSC course.</p>
+    </div>
+    <div class="mainsection">
+        <h2>Syllabus</h2>
+        <p>The syllabus to the course is in this pdf:
+            <a href="http://www.utsc.utoronto.ca/bretscher/b20/syllabus.pdf">PDF</a></p>
+    </div>
+</section>
+{% endif%}
+{% endblock %}

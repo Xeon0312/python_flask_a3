@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="records">
+    <h2>Instructor name: {{data.username}}</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Student name
+                </td>
+                <td>
+                    Item
+                </td>
+                <td>
+                    Explain
+                </td>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in data.requests %}
+            <tr>
+                <td>{{request.studentname}}</td>
+                <td>{{request.item}}</td>
+                <td>{{request.desc}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

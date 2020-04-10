@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='navbar.css') }}>
+    <link href={{ url_for('static', filename='index.css') }} rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href={{ url_for('static', filename='Anon_Feedback.css') }} rel="stylesheet" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='footer.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='Assignment.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='Calendar.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='lab.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='team.css') }}>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="A new course website for the course CSC B20 using HTML and CSS." />
+    <!--为网页定义描述内容-->
+    <meta name="keywords" content="cscb20, CSCB20, Introduction to Databases and Web Applications" />
+    <!--为搜索引擎定义关键词-->
+    <meta name="author" content="Boyu Cao, Jiayun Zhou" />
+    <!--定义页面作者-->
+    <meta name="HandheldFriendly" content="true" />
+    <title>CSCB20</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="sitename">
+                <h1><a href="/"><img src={{ url_for('static', filename='cscb20.PNG') }} alt="CSCB20"></a></h1>
+            </div>
+            <label for="menu_buttom" class="icon">&#9776;</label>
+            <input id="menu_buttom" type="checkbox">
+            <div class="topnav" id="myTopnav">
+                <a href="/" class="cool_line" class="active">Home&nbsp;</a>
+                {% if data.username is defined %}
+                <a href="http://piazza.com/mail.utoronto.ca/spring2020/cscb20" class="cool_line">Piazza</a>
+                <a href="https://markus.utsc.utoronto.ca/cscb20w20/?locale=en" class="cool_line">Mark Us</a>
+                <a href="assignment" class="cool_line">Assignment</a>
+                <a href="https://www.utsc.utoronto.ca/~bretscher/b20/syllabus.pdf" class="cool_line">Syllabus</a>
+                <a href="/Lab" class="cool_line">Lab</a>
+                <a href="/team" class="cool_line">Team</a>
+                <a href="/calendar" class="cool_line">Calendar</a>
+                <a href="/logout" class="cool_line">Logout</a>
+                {% else %}
+                <a href="/login" class="cool_line" class="active">Login&nbsp;</a>
+                <a href="/register" class="cool_line" class="active">Register&nbsp;</a>
+                {% endif %}
+            </div>
+        </header>
+        <div id="main">{% block main %}{% endblock %}
+
+        </div>
+        <footer>
+
+            <section class="footerNav1">
+                <ul>
+                    <a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" class="cool_line">Computer
+                        Science
+                        Faculty</a>
+                </ul>
+            </section>
+
+
+            <div id="copyright">
+                <span class="copyright"><small>&copy;&nbsp;Designed By Boyu Cao, Jiayun Zhou</small></span>
+            </div>
+            <nav class="another">
+
+            </nav>
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+</html>

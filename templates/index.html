@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='navbar.css') }}>
+  <link href={{ url_for('static', filename='index.css') }} rel="stylesheet" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='footer.css') }}>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="A new course website for the course CSC B20 using HTML and CSS." />
+  <!--为网页定义描述内容-->
+  <meta name="keywords" content="cscb20, CSCB20, Introduction to Databases and Web Applications" />
+  <!--为搜索引擎定义关键词-->
+  <meta name="author" content="Boyu Cao, Jiayun Zhou" />
+  <!--定义页面作者-->
+  <meta name="HandheldFriendly" content="true" />
+  <title>CSCB20</title>
+</head>
+
+<body>
+
+  {% extends "nav.html" %}
+
+  <div id="main">
+    <section id="mainCampaign">
+      <div class="headerWrap">
+        <div class="mainPanel">
+          <a href="/">
+            <img src={{ url_for('static', filename='Introduction to Databases and Web Applications.png') }} alt="CSCB20"
+              class="pc"></a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="mainsection">
+        <h2> Course Description</h2>
+
+        <p>A practical introduction to databases and Web app development. Databases: terminology and applications;
+          creating, querying and updating databases; the entity-relationship model for database design. Web documents
+          and applications: static
+          and interactive
+          documents; Web servers and dynamic server-generated content; Web application development and interface with
+          databases.</p>
+      </div>
+      <div class="mainsection">
+        <h2>Prerequisite</h2>
+        <p>Some experience with programming in an imperative language such as Python, Java or C.</p>
+      </div>
+      <div class="mainsection">
+        <h2>Exclusion</h2>
+        <p>This course may not be taken after - or concurrently with - any C- or D-level CSC course.</p>
+      </div>
+      <div class="mainsection">
+        <h2>Syllabus</h2>
+        <p>The syllabus to the course is in this pdf:
+          <a href="http://www.utsc.utoronto.ca/bretscher/b20/syllabus.pdf">PDF</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  {% extends 'footer.html' %}
+
+
+</body>
+
+</html>

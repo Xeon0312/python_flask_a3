@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="records">
+    <h2>Student name: {{data.username}}</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td style="width: 20%">
+                    Grade
+                </td>
+                <td>
+                    Remark request
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key,value in data.records.items()%}
+            <tr>
+                <td>
+                    {{key}}
+                </td>
+                <td style="width: 400px;">
+                    {{value}}
+
+                </td>
+                <td>
+                    {% if value is not none %}
+                    <form action={{'/remarking/'  + key}} method="post">
+                        <input type="text" name="desc" placeholder="explain why" />
+                        <br>
+                        <button type="submit">submit remark request</button>
+                    </form>
+                    {% endif%}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

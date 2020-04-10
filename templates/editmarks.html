@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block main %}
+<div style="border-radius:5px;background-color:#f2f2f2;padding:40px;" class="edit">
+
+    <form action={{"/editmarks/" + data.student.studentname}} method="POST">
+        <h4>{{ data.student.studentname }}</h4>
+        <label for="assignment1">Assignment 1 </label>
+        <input type="number" id="assignment1" name="assignment1" value={{data.student.assignment1}} />
+        <br>
+        <label for="assignment2">Assignment 2 </label>
+        <input type="number" id="assignment2" name="assignment2" value={{data.student.assignment2}} />
+        <br>
+        <label for="assignment1">Assignment 3 </label>
+        <input type="number" id="assignment3" name="assignment3" value={{data.student.assignment3}} />
+        <br>
+        <label for="midtermexam">Midterm Exam 3 </label>
+        <input type="number" id="midtermexam" name="midtermexam" value={{data.student.midtermexam}} />
+        <br>
+        <label for="finalexam">Final Exam </label>
+        <input type="number" id="finalexam" name="finalexam" value={{data.student.finalexam}} />
+        <br>
+        <label for="lab">Lab </label>
+        <input type="number" id="lab" name="lab" value={{data.student.lab}} />
+        <br>
+        <button class="btn" type="submit">
+            Submit
+        </button>
+    </form>
+</div>
+{% endblock %}

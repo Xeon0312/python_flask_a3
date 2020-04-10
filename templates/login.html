@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="login">
+    <form method="post">
+        {% if data.msg is defined %}
+        <p>{{data.msg}}</p>
+        {% endif %}
+        <div style="width: 100%;text-align: center;">
+            <h4>Login</h4>
+        </div>
+        <p>Enter your username: <input type="text" name="username"></p>
+        <p>Enter your password: <input type="password" name="password"></p>
+        <p><button style="width: 100%; border-radius: 5px;" class="btn" type="submit" value=Submit>Login</button></p>
+    </form>
+</div>
+{% endblock %}

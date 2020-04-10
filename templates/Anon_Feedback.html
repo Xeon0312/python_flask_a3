@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="Anon-body">
+	<div class="Feedback-body">
+		<div class="contact-us">
+			<div class="title">
+				<h1>Feedback</h1>
+			</div>
+			<div class="form">
+				<form action="/feedback" method="POST">
+					<div class="form-items">
+						<label for="item1">Instructor: </label>
+						<select name="instructor" id="instructor">
+							{% for instructor in data.instructors %}
+							<option value={{instructor.username}}>
+								{{instructor.username}}
+							</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-items">
+						<label for="item1">What do you like about the instructor teaching?</label>
+						<textarea id="item1" name="item1" class="input message" cols="30" rows="10"
+							placeholder="Message....."></textarea>
+					</div>
+					<div class="form-items">
+						<label for="item2">What do you recommend the instructor to do to improve their teaching?</label>
+						<textarea id="item2" name="item2" class="input message" cols="30" rows="10"
+							placeholder="Message....."></textarea>
+					</div>
+					<div class="form-items">
+						<label for="item3">What do you like about the labs?</label>
+						<textarea id="item3" name="item3" class="input message" cols="30" rows="10"
+							placeholder="Message....."></textarea>
+					</div>
+					<div class="form-items">
+						<label for="item4">What do you recommend the lab instructors to do to improve their lab
+							teaching?</label>
+						<textarea id="item4" name="item4" class="input message" cols="30" rows="10"
+							placeholder="Message....."></textarea>
+					</div>
+					<button style="width: 100%;" type="submit" class="btn">
+						Submit
+					</button>
+				</form>
+			</div>
+
+
+
+		</div>
+	</div>
+
+</div>
+
+</div>
+{% endblock %}

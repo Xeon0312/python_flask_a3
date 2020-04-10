@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="register">
+    <form method="post">
+        {% if data.msg is defined %}
+        <p>{{data.msg}}</p>
+        {% endif %}
+        <div style="width: 100%;text-align: center;">
+            <h4>Register</h4>
+        </div>
+        <p>Enter your username: <input type="text" name="username"></p>
+        <p>Enter your password: <input type="password" name="password"></p>
+        <p>confirm your password: <input type="password" name="password2"></p>
+        <p> Select your class:
+            <select name="class" id="class">
+                <option value="cscb20">CSCB20</option>
+                <option value="cscb21">CSCB21</option>
+            </select></p>
+        </p>
+        <p>
+            Select your role:
+            <select name="role" id="role">
+                <option value="0">Student</option>
+                <option value="1">Instructor</option>
+            </select></p>
+        <p><button style="width: 100%;border-radius: 5px;" class="btn" type="submit" value=Submit>Register</button></p>
+    </form>
+</div>
+{% endblock %}
